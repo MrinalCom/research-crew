@@ -17,4 +17,6 @@ USER crew
 
 EXPOSE 8000
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Render (and similar PaaS hosts) inject PORT and require the app to bind to
+# it; default to 8000 for docker-compose / plain `docker run` where PORT isn't set.
+CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"]

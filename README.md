@@ -59,6 +59,10 @@ Langgraph/
 - **Sandbox**: the coder agent executes code via `subprocess` with resource limits, a stripped environment (backend secrets never inherited), and a path-jailed workspace directory — not Docker-in-Docker, not `eval()`. Documented tradeoff below.
 - **Time travel**: `GET /runs/{id}/history` and `POST /runs/{id}/replay_from/{checkpoint_id}` are thin wrappers over `checkpointer.get_state_history()` / forking from an arbitrary checkpoint — cheap to build directly off LangGraph's own APIs.
 
+## Deploying it for free
+
+See [DEPLOY.md](DEPLOY.md) — Vercel (frontend) + Render (backend) + Neon (Postgres), all permanent free tiers, no credit card required.
+
 ## Running it
 
 ### Docker Compose (recommended)
