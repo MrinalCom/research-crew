@@ -1,5 +1,11 @@
 # Research Crew
 
+**Live:** [frontend](https://research-crew-frontend-mrinalcoms-projects.vercel.app) ·
+[backend](https://research-crew-backend-two.vercel.app/health) — deployed on Vercel with a
+live Neon Postgres checkpointer. **Note:** the deployed backend has no `ANTHROPIC_API_KEY` set
+yet, so it boots and serves `/health` but agent runs will fail until one is added
+(`vercel env add ANTHROPIC_API_KEY production` from `backend/`, then redeploy).
+
 A supervisor-led multi-agent research/coding crew built on [LangGraph](https://github.com/langchain-ai/langgraph), delivered as a full-stack app: a FastAPI backend running the graph and a React frontend that visualizes it live — graph topology, streaming agent activity, human-in-the-loop approval, and checkpoint time-travel.
 
 This isn't a single-chain chatbot wearing a graph as costume. It exists to demonstrate the patterns that separate a production agent from a demo: durable checkpointed execution, a real human-in-the-loop approval gate (not just a chat confirmation), a provably-bounded self-correction loop, concurrent fan-out/fan-in, and time-travel replay.

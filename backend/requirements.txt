@@ -1,0 +1,15 @@
+langgraph>=0.6,<0.7
+langgraph-checkpoint-sqlite>=2.0
+langgraph-checkpoint-postgres>=2.0
+langchain-core>=0.3
+langchain-anthropic>=0.3
+langchain-openai>=0.3
+langchain-tavily>=0.1
+fastapi>=0.115
+uvicorn[standard]>=0.32
+pydantic>=2.9
+pydantic-settings>=2.6
+asyncpg>=0.30
+psycopg[binary]>=3.2
+structlog>=24.4
+sse-starlette>=2.1
